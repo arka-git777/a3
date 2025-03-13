@@ -14,7 +14,7 @@ namespace a3
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 recentFiles.Add(openFileDialog.FileName);
@@ -29,12 +29,12 @@ namespace a3
             string clickedFileName = clickedItem.Text;
             for (int i = 0; i < recentFiles.Count; i++)
             {
-                if(recentFiles[i].Contains(clickedFileName))
+                if (recentFiles[i].Contains(clickedFileName))
                 {
                     MessageBox.Show($"File path is {recentFiles[i]}");
                 }
             }
-            
+
         }
 
         private void lightToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -60,6 +60,11 @@ namespace a3
         private void filesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Selected file: " + recentFiles[0]);
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
